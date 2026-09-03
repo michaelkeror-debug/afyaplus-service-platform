@@ -1,0 +1,40 @@
+   git init
+git add .
+git commit -m "Initial production version"
+git tag v1.0.0
+
+{
+  echo "=== GIT TAG ==="
+  git describe --tags --exact-match HEAD                                                           
+  echo                  
+  echo "=== DOCKER BUILD ==="           
+  docker build -t afyaplus-triage-call:v1.0.0 .
+  
+  echo                       
+  echo "=== DOCKER IMAGE ==="                  
+  docker image ls afyaplus-triage-call
+  
+  echo                            
+  echo "=== DOCKER IMAGE SIZE ==="                  
+  docker image inspect afyaplus-triage-call:v1.0.0 \
+    --format='Image={{.RepoTags}} Size={{.Size}} bytes'
+} 2>&1 | tee docker_evidence.txt
+
+
+
+
+
+{
+echo "=== RUN WITH SECRET INJECTED AT RUNTIME ==="
+  docker run --rm \
+    --env-file .env \
+    afyaplus-triage:v1.0.0 \
+    sh -c 'if [ -n "$OPENAI_API_KEY" ]; then echo "OPENAI_API_KEY injected at runtime: YES"; else echo "NO"; exit 1; fi'
+
+  echo
+  echo "=== CHECK IMAGE FOR SECRET ==="
+  docker history --no-trunc afyaplus-triage:v1.0.0 | grep -i "OPENAI_API_KEY" \
+    && echo "WARNING: secret reference found in image history" \
+    || echo "No OPENAI_API_KEY found in image history"
+
+} 2>&1 | tee docker_runtime_secrets.txt

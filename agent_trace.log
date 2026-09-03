@@ -1,0 +1,28 @@
+INFO:     Will watch for changes in these directories: ['/Users/MAC/afyaplus-platform']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [54982] using WatchFiles
+INFO:     Started server process [54985]
+INFO:     Waiting for application startup.
+2026-09-03 13:15:01,673 Processing request of type ListToolsRequest
+INFO:     Application startup complete.
+Starting AfyaPlus Logistics Agent...
+MCP tools loaded:
+  - check_stock
+  - plan_delivery_route
+Agent ready using model: gpt-4.1-mini
+INFO:     127.0.0.1:49894 - "POST /token HTTP/1.1" 200 OK
+Agent error: Connection error.
+INFO:     127.0.0.1:49895 - "POST /agent HTTP/1.1" 503 Service Unavailable
+2026-09-03 13:19:11,896 Processing request of type CallToolRequest
+2026-09-03 13:19:11,896 tool=plan_delivery_route start=C001
+2026-09-03 13:19:11,897 Processing request of type ListToolsRequest
+INFO:     127.0.0.1:49900 - "POST /agent HTTP/1.1" 200 OK
+2026-09-03 13:21:11,761 Processing request of type CallToolRequest
+2026-09-03 13:21:11,761 tool=plan_delivery_route start=C01
+2026-09-03 13:21:11,763 Processing request of type ListToolsRequest
+INFO:     127.0.0.1:49909 - "POST /agent HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'capstone_week6/triage_model_call.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [54985]
