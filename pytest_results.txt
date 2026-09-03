@@ -1,0 +1,21 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- /Users/MAC/afyaplus-platform/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/MAC/afyaplus-platform/capstone_week6
+plugins: langsmith-0.11.1, anyio-4.14.2
+collecting ... collected 6 items
+
+test_triage.py::test_missing_authentication_returns_401 PASSED
+test_triage.py::test_wrong_credentials_returns_401 PASSED
+test_triage.py::test_successful_login_returns_200 PASSED
+test_triage.py::test_invalid_input_with_authentication_returns_422 LOGIN STATUS: 200
+LOGIN RESPONSE: {"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtZXJjeSIsInJvbGUiOiJjb29yZGluYXRvciIsImV4cCI6MTc4ODM2MDA3Nn0.NWH8jCWlXOjnPhRnNfH2WFQBcMVTh6d4S7wV0QD95GI","token_type":"bearer"}
+PASSED
+test_triage.py::test_valid_authentication_wrong_authorization_returns_403 LOGIN STATUS: 200
+LOGIN RESPONSE: {"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqYW1lcyIsInJvbGUiOiJwYXRpZW50IiwiZXhwIjoxNzg4MzYwMDc2fQ.iwMHDNuQIAO-X6um0KbuG1HXw0hJU0cfVEnL3HewngM","token_type":"bearer"}
+PASSED
+test_triage.py::test_valid_authentication_and_valid_authorization_returns_200 LOGIN STATUS: 200
+LOGIN RESPONSE: {"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJtZXJjeSIsInJvbGUiOiJjb29yZGluYXRvciIsImV4cCI6MTc4ODM2MDA3Nn0.NWH8jCWlXOjnPhRnNfH2WFQBcMVTh6d4S7wV0QD95GI","token_type":"bearer"}
+PASSED
+
+============================== 6 passed in 1.56s ===============================

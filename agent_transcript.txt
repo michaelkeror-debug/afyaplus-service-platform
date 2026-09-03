@@ -1,0 +1,4 @@
+=== SUCCESSFUL MULTI-TOOL ANSWER ===
+{"answer":"Starting from C01 (Kisumu Central Clinic), the stock of amoxicillin is 40 units.\n\nThe planned delivery route starting from C01 goes next to Kisumu West Dispensary (C02), and the total distance for the entire route is 135.1 km. However, the specific distance from C01 to C02 is not separately provided by the data.\n\nThe data cannot answer this.","model_used":"gpt-4.1-mini","user_id":"mercy"}
+=== HONEST DATA-CANNOT-ANSWER ===
+{"answer":"The data cannot answer this.","model_used":"gpt-4.1-mini","user_id":"mercy"}

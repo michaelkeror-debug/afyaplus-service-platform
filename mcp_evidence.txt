@@ -1,0 +1,16 @@
+=== MCP TOOL TESTS ===
+
+--- check_stock: valid ---
+{"item": "amoxicillin", "stock": [{"clinic": "Kisumu Central Clinic", "county": "Kisumu", "units": 40, "reorder_needed": false}, {"clinic": "Vihiga Health Post", "county": "Vihiga", "units": 8, "reorder_needed": true}, {"clinic": "Kisii Family Clinic", "county": "Kisii", "units": 75, "reorder_needed": false}, {"clinic": "Homa Bay Lakeside Clinic", "county": "Homa Bay", "units": 0, "reorder_needed": true}, {"clinic": "Kisumu West Dispensary", "county": "Kisumu", "units": 22, "reorder_needed": false}]}
+
+--- check_stock: valid ---
+{"error": "Unknown item 'paracetamol'. Valid items: ['amoxicillin', 'ors_sachets', 'malaria_kits']"}
+
+--- DELIVERY ROUTE ---
+{"error": "Unknown clinic id 'Vihiga Health Post'. Valid ids: ['C01', 'C02', 'C03', 'C04', 'C05']"}
+
+--- Distance (Km) ---
+16.5
+
+--- Delivery ETA ---
+{"error": "Unknown clinic id. Valid ids: ['C01', 'C02', 'C03', 'C04', 'C05']"}
